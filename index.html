@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Marketplace for Students</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#333;
+}
+
+header{
+    background:#0a3d62;
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+nav button{
+    margin-left:10px;
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:white;
+    color:#0a3d62;
+    font-weight:bold;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(to right,#1e5799,#2989d8);
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+.search-box{
+    margin-top:25px;
+}
+
+.search-box input{
+    width:60%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+}
+
+.search-box button{
+    padding:15px 20px;
+    border:none;
+    border-radius:10px;
+    background:#0a3d62;
+    color:white;
+    cursor:pointer;
+}
+
+.container{
+    padding:40px;
+}
+
+.section-title{
+    margin-bottom:20px;
+    color:#0a3d62;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+    height:180px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin-top:15px;
+}
+
+.price{
+    color:#27ae60;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.card button{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.buy{
+    background:#0a3d62;
+    color:white;
+}
+
+.chat{
+    background:#27ae60;
+    color:white;
+}
+
+footer{
+    background:#0a3d62;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+.popup{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    z-index:1000;
+    text-align:center;
+}
+
+.popup button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    background:#0a3d62;
+    color:white;
+    border-radius:8px;
+}
+
+.overlay{
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Mini Marketplace</div>
+    <nav>
+        <button onclick="showPrototype()">Home</button>
+        <button onclick="showPrototype()">Post Item</button>
+        <button onclick="showPrototype()">Login</button>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Mini Marketplace for Students</h1>
+    <p>Buy and Sell Books, Gadgets, Uniforms & More</p>
+    <p>Supported by Intel Student Organization</p>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search items...">
+        <button onclick="showPrototype()">Search</button>
+    </div>
+</section>
+
+<div class="container">
+    <h2 class="section-title">Featured Listings</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136">
+            <h3>C# Programming Book</h3>
+            <p class="price">₱150</p>
+            <button class="buy" onclick="showPrototype()">Buy Now</button>
+            <button class="chat" onclick="showPrototype()">Chat Seller</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8">
+            <h3>Used Laptop</h3>
+            <p class="price">₱8,500</p>
+            <button class="buy" onclick="showPrototype()">Buy Now</button>
+            <button class="chat" onclick="showPrototype()">Chat Seller</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518">
+            <h3>P.E Uniform</h3>
+            <p class="price">₱250</p>
+            <button class="buy" onclick="showPrototype()">Buy Now</button>
+            <button class="chat" onclick="showPrototype()">Chat Seller</button>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2026 Mini Marketplace for Students | Prototype by Intel Organization
+</footer>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="popup">
+    <h2>Prototype Only</h2>
+    <p>Under Development</p>
+    <p>This feature is currently not available yet.</p>
+    <button onclick="closePopup()">Close</button>
+</div>
+
+<script>
+function showPrototype(){
+    document.getElementById("popup").style.display="block";
+    document.getElementById("overlay").style.display="block";
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+    document.getElementById("overlay").style.display="none";
+}
+</script>
+
+</body>
+</html>
